@@ -791,7 +791,7 @@ library(tidyverse)
 library(dplyr)
 
 #read in csv file
-file <- "C:/Users/esilve02/RProjects/gRes/outputData/gresOutputBasicPublic/FAILURE.csvFiles/actonOutput1.csv"
+file <- "C:/Users/esilve02/RProjects/gRes/outputData/gresOutputBasicPublic/notUsableCsvFiles/actonOutput1.csv"
 read.csv <- read_csv(file, na = "", skip = 0)
 
 #delete rows 2 and 3 in csv file

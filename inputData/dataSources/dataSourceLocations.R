@@ -1,14 +1,45 @@
 #this script reads in the sources from each data file that was used to input
 #data into G-res
 
-install.packages("tm")
-install.packages("pdftools")
-install.packages("stringr")
-library(tm)
-library(pdftools)
-library(stringr)
-library(tidyr)
-library(dplyr)
+##########VARIABLE NOTES################
+
+#####Year of Impoundment/Age of Reservoir#######
+  # I think that when G-res said that age of reservoir was important for 
+  #diffusive emissions, it didn't mean year of impoundment. 
+#G-res assumes that the lifetime of a reservoir is 100 years and uses 
+  #the assumption that emissions decrease as the reservoir ages to 
+  #calculate lifetime diffusive emissions rather than the actual age of the reservoir
+# 7/18/18 After going through the documentation with Jake, we are still unsure
+  #about year of impoundment. It appears that it does not affect the methane emission 
+  #output, but it is unclear what it's purpose is.
+#It is unclear wheather the G-res emission output is a 100 year integration
+  #output, or if it is for the current year. G-res does a 100 year
+  #integration calculation for diffusive emissions, but not for ebullition.
+  #The 100 year integration also seems to be important in gross annual CO2 emissions.
+# When calculating the 100 year integration of diffusive emissions, G-res
+  #uses a lnZ term, where Z is not defined. This Z variable should be further investigated
+
+#######Land Use#######
+#Land use is involved in phosphorus load calculations, and phosphorus 
+#concentration is used in calculating CO2
+
+####WRT#########
+#water residence time is used in calculating degassing and phosphorus concentration
+
+#######Annual Standardization##########
+#To annually standardize the emission values, they use a temperature 
+#correction coefficient, which takes into account the annual variation 
+#in temperature together with a factor describing the temperature 
+#dependence of GHG production. So  there are different numbers for the 
+#relationship between CH4 and temperature and CO2 and temperature
+#the equation for the CH4 coefficient is:
+#10^((temp/month)*0.052)
+#So this calculation needs to be done for every month and they got the 
+#0.052 number from the slope of temperature vs. CH4 flux function in 
+#their database and if the temperature is lower than 4 degrees C, they 
+#use 4 degrees C
+
+############END OF VARIABLE NOTES####################
 
 ####PUBLICLY AVAILABLE DATA#########
 #Publicly available data includes: mean global horizontal irradiance, temperature, and wind
@@ -144,7 +175,6 @@ library(dplyr)
 #path to Wingfoot Lake temperature data file (PDF):
 #"C:\Users\esilve02\RProjects\gRes\inputData\dataSources\airTemperature\wingfootTempDataNOAA.pdf"
 
-
 ########END OF TEMPERATURE DATA##########################
 
 ############WIND DATA#######################
@@ -209,7 +239,6 @@ library(dplyr)
 #path to Knox Lake wind data file (PDF):
 #"C:\Users\esilve02\RProjects\gRes\inputData\dataSources\windSpeed\knoxWindDataNOAA.pdf"
 
-
 ###########END OF WIND DATA############
 
 #######BASIC DATA################
@@ -242,30 +271,7 @@ library(dplyr)
 #phosphorus is used in calculating gross annual CO2 emission
 
 
-##########OTHER VARIABLE NOTES################
 
-# I think that when G-res said that age of reservoir was important for 
-  #diffusive emissions, it didn't mean year of impoundment. 
-  #G-res assumes that the lifetime of a reservoir is 100 years and uses 
-  #the assumption that emissions decrease as the reservoir ages to 
-  #calculate lifetime diffusive emissions rather than the actual age of the reservoir
-
-#Land use is involved in phosphorus load calculations, and phosphorus 
-  #concentration is used in calculating CO2
-
-#water residence time is used in calculating degassing and phosphorus concentration
-
-#To annually standardize the emission values, they use a temperature 
-  #correction coefficient, which takes into account the annual variation 
-  #in temperature together with a factor describing the temperature 
-  #dependence of GHG production. So  there are different numbers for the 
-  #relationship between CH4 and temperature and CO2 and temperature
-  #the equation for the CH4 coefficient is:
-  #10^((temp/month)*0.052)
-  #So this calculation needs to be done for every month and they got the 
-  #0.052 number from the slope of temperature vs. CH4 flux function in 
-  #their database and if the temperature is lower than 4 degrees C, they 
-  #use 4 degrees C
 
 
 
@@ -389,7 +395,7 @@ library(dplyr)
 #path to Wingfoot Lake G-res .mer file:
 #"C:\Users\esilve02\RProjects\gRes\inputData\gresInputDataBasicPublic\G-resTool_Wingfoot Lake (1).mer"
 
-
+###########END OF LEVEL 1 INPUT FILES##############
 
 
 
@@ -515,7 +521,304 @@ library(dplyr)
 #path to Wingfoot Lake G-res .mer file:
 #"C:\Users\esilve02\RProjects\gRes\inputData\gresInputDataBasicPublicLanduse\G-resTool_Wingfoot Lake (2).mer"
 
+############END OF LEVEL 2 INPUT FILES############
 
+##############LEVEL 1 G-RES OUPUT .CSV FILES############
+#the paths below lead to the saved outputs that resulted from the level 1
+  #G-res input .mer files
+#they are all saved as .csv to be most easily used in R
+#to save G-res outputs as a csv, click on the "export to txt" button in the 
+  #top right hand corner of G-res, and save the file name as a .csv
+#the information in these files includes both input and output (emission) data
+
+#path to Acton Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\actonOutput1.csv"
+
+#path to Allatoona Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\allatoonaOutput1.csv"
+
+#path to Alum Creek lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\alumCreekOutput1.csv"
+
+#path to Apple Valley Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\appleValleyOutput1.csv"
+
+#path to Atwood lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\atwoodOutput1.csv"
+
+#path to Brookville Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\brookvilleOutput1.csv"
+
+#path to Buckhorn Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\buckhornOutput1.csv"
+
+#path to Burr Oak Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\burrOakOutput1.csv"
+
+#path to Caesar Creek Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\caesarCreekOutput1.csv"
+
+#path to Carr Fork Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\carrForkOutput1.csv"
+
+#path to Cave Run Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\caveRunOutput1.csv"
+
+#path to Charles Mill Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\charlesMillOutput1.csv"
+
+#path to Cowan Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\cowanOutput1.csv"
+
+#path to Delaware Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\delawareOutput1.csv"
+
+#path to Dillon Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\dillonOutput1.csv"
+
+#path to Douglas Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\douglasOutput1.csv"
+
+#path to Fontana Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\fontanaOutput1.csv"
+
+#path to Guntersville Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\guntersvilleOutput1.csv"
+
+#path to Hartwell Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\hartwellOuput1.csv"
+
+#path to Hocking County Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\hockingCountyOutput1.csv"
+
+#path to Kiser Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\kiserOutput1.csv"
+
+#path to Knox Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\knoxOutput1.csv"
+
+#path to La Due Reservoir level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\laDueResOutput1.csv"
+
+#path to Lake Loramie level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\lakeLoramieOutput1.csv"
+
+#path to Lake Milton level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\lakeMiltonOutput1.csv"
+
+#path to Lake Mohawk level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\lakeMohawkOutput1.csv"
+
+#path to Lake Roaming Rock level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\lakeRoamingRockOutput1.csv"
+
+#path to Lake Waynoka level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\lakeWaynokaOutput1.csv"
+
+#path to Michael J. Kirwan Reservoir level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\michaelJKirwanResOutput1.csv"
+
+#path to Paint Creek Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\paintCreekOutput1.csv"
+
+#path to Piedmont Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\piedmontOutput1.csv"
+
+#path to Pleasant Hill Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\pleasantHillOutput1.csv"
+
+#path to Rocky Fork Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\rockyForkOutput1.csv"
+
+#path to Senecaville Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\senecavilleOutput1.csv"
+
+#path to Tappan Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\tappanOutput1.csv"
+
+#path to Watts Bar Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\wattsBarOutput1.csv"
+
+#path to William H. Harsha Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\williamHarshaOutput1.csv"
+
+#path to Wingfoot Lake level 1 output file:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\wingfootOutput1.csv"
+
+##########END OF LEVEL 1 OUTPUT .CSV FILES#############
+
+########LEVEL 2 G-RES OUTPUT .CSV FILES############
+#the following comments are paths to output that are the result of level 2
+  #G-res .mer input files
+#They are all in .csv format
+#The lakes that do not have paths are the same lakes that did not have land use data avaialble
+
+#path to Acton Lake level 2 output file:
+#
+
+#path to Allatoona Lake level 2 output file:
+#
+
+#path to Alum Creek lake level 2 output file:
+#
+
+#path to Apple Valley Lake level 2 output file:
+#
+
+#path to Atwood lake level 2 output file:
+#
+
+#path to Brookville Lake level 2 output file:
+#
+
+#path to Buckhorn Lake level 2 output file:
+#
+
+#path to Burr Oak Lake level 2 output file:
+#
+
+#path to Caesar Creek Lake level 2 output file:
+#
+
+#path to Carr Fork Lake level 2 output file:
+#
+
+#path to Cave Run Lake level 2 output file:
+#
+
+#path to Charles Mill Lake level 2 output file:
+#
+
+#path to Cowan Lake level 2 output file:
+#
+
+#path to Delaware Lake level 2 output file:
+#
+
+#path to Dillon Lake level 2 output file:
+#
+
+#path to Douglas Lake level 2 output file:
+#
+
+#path to Fontana Lake level 2 output file:
+#
+
+#path to Guntersville Lake level 2 output file:
+#
+
+#path to Hartwell Lake level 2 output file:
+#
+
+#path to Hocking County Lake level 2 output file:
+#
+
+#path to Kiser Lake level 2 output file:
+#
+
+#path to Knox Lake level 2 output file:
+#
+
+#path to La Due Reservoir level 2 output file:
+#
+
+#path to Lake Loramie level 2 output file:
+#
+
+#path to Lake Milton level 2 output file:
+#
+
+#path to Lake Mohawk level 2 output file:
+#
+
+#path to Lake Roaming Rock level 2 output file:
+#
+
+#path to Lake Waynoka level 2 output file:
+#
+
+#path to Michael J. Kirwan Reservoir level 2 output file:
+#
+
+#path to Paint Creek Lake level 2 output file:
+#
+
+#path to Piedmont Lake level 2 output file:
+#
+
+#path to Pleasant Hill Lake level 2 output file:
+#
+
+#path to Rocky Fork Lake level 2 output file:
+#
+
+#path to Senecaville Lake level 2 output file:
+#
+
+#path to Tappan Lake level 2 output file:
+#
+
+#path to Watts Bar Lake level 2 output file:
+#
+
+#path to William H. Harsha Lake level 2 output file:
+#
+
+#path to Wingfoot Lake level 2 output file:
+#
+
+#########END OF LEVEL 2 OUTPUT .csv FILES############
+
+
+
+###############CODE FOR READING IN G-RES OUTPUT .CSV FILES################
+
+########READING IN LEVEL 1 OUTPUT .CSV FILES###############
+#THE HOPE:
+#the following code reads in the G-res output .csv files from each of the lakes
+#it combines them into a data frame that includes all of 
+  #the output data for each of the lakes
+
+#THE REALITY:
+#I wrote this code for acton lake, assuming that all of the .csv output files
+  #would be in the same format (because they all contain the same info).
+  #However, for some reason the formatting is different on all of them,
+  #so I downloaded the html output files and manually inputted the data 
+  #into excel
+
+
+library(tidyverse)
+library(dplyr)
+
+#read in csv file
+file <- "C:/Users/esilve02/RProjects/gRes/outputData/gresOutputBasicPublic/FAILURE.csvFiles/actonOutput1.csv"
+read.csv <- read_csv(file, na = "", skip = 0)
+
+#delete rows 2 and 3 in csv file
+read.csv <- read.csv[-c(2, 3), ]
+
+#read in the same csv file, but skipping the first 4 rows
+read.csv2 <- read_csv(file, na = "", skip = 4)
+
+# read.csv2 <- read_csv(file, na = "", skip = 0)
+# read.csv2 <- read.csv3[-c(1,2), ]
+
+#add in NA columns so that the two versions of the csv line up (headings to values)
+xx = c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
+       "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+       "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK",
+       "AL", "AM", "AN", "AO", "AP", "AQ", "AR")
+read.csv2[xx] <- NA
+read.csv2 <- read.csv2 %>% select ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
+                      "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+                      "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK",
+                      "AL", "AM", "AN", "AO", "AP", "AQ", "AR", everything())
+
+#rename column names in csv2 so that they are the same as csv
+colnames(read.csv2) <- colnames(read.csv)
+
+#rbind the two files together into csv3
+read.csv3 <- rbind(read.csv, read.csv2)
 
 
 ####ATTEMPT AT READING IN A PDF#########
@@ -523,6 +826,17 @@ library(dplyr)
 # ##This commented code reads in a PDF file- the problem is that it puts the entire pdf into one column/row
 # ##I broke the pdf up by page but did not figure out how to break it up by line
 # #Acton lake temperature data file
+
+# #packages needed 
+# install.packages("tm")
+# install.packages("pdftools")
+# install.packages("stringr")
+# library(tm)
+# library(pdftools)
+# library(stringr)
+# library(tidyr)
+# library(dplyr)
+
 # read <- readPDF(control = list(text = "-layout"))
 # document <- Corpus(URISource("C:/Users/esilve02/RProjects/gRes/inputData/dataSources/airTemperature/actonTempDataNOAA.pdf"), 
 #                    readerControl = list(reader = read))

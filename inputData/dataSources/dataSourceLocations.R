@@ -523,127 +523,129 @@
 
 ############END OF LEVEL 2 INPUT FILES############
 
-##############LEVEL 1 G-RES OUPUT .CSV FILES############
+##############LEVEL 1 G-RES OUPUT .HTML FILES############
 #the paths below lead to the saved outputs that resulted from the level 1
   #G-res input .mer files
-#they are all saved as .csv to be most easily used in R
+#they are all saved as .html because saving as .csv resulted in complicated formatting errors
 #to save G-res outputs as a csv, click on the "export to txt" button in the 
   #top right hand corner of G-res, and save the file name as a .csv
-#the information in these files includes both input and output (emission) data
+#to save G-res outputs as .html, click on the printable report button on
+  #the top right corner and then click on output report, then command save once it loads
+#the information in these files includes output methane emission data
 
 #path to Acton Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\actonOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\actonOutput1.html"
 
 #path to Allatoona Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\allatoonaOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\allatoonaOutput1.html"
 
 #path to Alum Creek lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\alumCreekOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\alumCreekOutput1.html"
 
 #path to Apple Valley Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\appleValleyOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\appleValleyOutput1.html"
 
 #path to Atwood lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\atwoodOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\atwoodOutput1.html"
 
 #path to Brookville Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\brookvilleOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\brookvilleOutput1.html"
 
 #path to Buckhorn Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\buckhornOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\buckhornOutput1.html"
 
 #path to Burr Oak Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\burrOakOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\burrOakOutput1.html"
 
 #path to Caesar Creek Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\caesarCreekOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\caesarCreekOutput1.html"
 
 #path to Carr Fork Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\carrForkOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\carrForkOutput1.html"
 
 #path to Cave Run Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\caveRunOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\caveRunOutput1.html"
 
 #path to Charles Mill Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\charlesMillOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\charlesMillOutput1.html"
 
 #path to Cowan Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\cowanOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\cowanOutput1.html"
 
 #path to Delaware Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\delawareOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\delawareOutput1.html"
 
 #path to Dillon Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\dillonOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\dillonOutput1.html"
 
 #path to Douglas Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\douglasOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\douglasOutput1.html"
 
 #path to Fontana Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\fontanaOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\fontanaOutput1.html"
 
 #path to Guntersville Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\guntersvilleOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\guntersvilleOutput1.html"
 
 #path to Hartwell Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\hartwellOuput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\hartwellOutput1.html"
 
 #path to Hocking County Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\hockingCountyOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\hockingCountyOutput1.html"
 
 #path to Kiser Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\kiserOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\kiserOutput1.html"
 
 #path to Knox Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\knoxOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\knoxOutput1.html"
 
 #path to La Due Reservoir level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\laDueResOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\laDueResOutput1.html"
 
 #path to Lake Loramie level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\lakeLoramieOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\lakeLoramieOutput1.html"
 
 #path to Lake Milton level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\lakeMiltonOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\lakeMiltonOutput1.html"
 
 #path to Lake Mohawk level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\lakeMohawkOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\lakeMohawkOutput1.html"
 
 #path to Lake Roaming Rock level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\lakeRoamingRockOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\lakeRoamingRockOutput1.html"
 
 #path to Lake Waynoka level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\lakeWaynokaOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\lakeWaynokaOutput1.html"
 
 #path to Michael J. Kirwan Reservoir level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\michaelJKirwanResOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\michaelJKirwanResOutput1.html"
 
 #path to Paint Creek Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\paintCreekOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\paintCreekOutput1.html"
 
 #path to Piedmont Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\piedmontOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\piedmontOutput1.html"
 
 #path to Pleasant Hill Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\pleasantHillOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\pleasantHillOutput1.html"
 
 #path to Rocky Fork Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\rockyForkOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\rockyForkOutput1.html"
 
 #path to Senecaville Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\senecavilleOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\senecavilleOutput1.html"
 
 #path to Tappan Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\tappanOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\tappanOutput1.html"
 
 #path to Watts Bar Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\wattsBarOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\wattsBarOutput1.html"
 
 #path to William H. Harsha Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\williamHarshaOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\williamHarshaOutput1.html"
 
 #path to Wingfoot Lake level 1 output file:
-#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\wingfootOutput1.csv"
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\htmlFiles\wingfootOutput1.html"
 
 ##########END OF LEVEL 1 OUTPUT .CSV FILES#############
 
@@ -785,40 +787,58 @@
   #However, for some reason the formatting is different on all of them,
   #so I downloaded the html output files and manually inputted the data 
   #into excel
+#the code for reading in that excel sheet is below
 
 
-library(tidyverse)
-library(dplyr)
+# library(tidyverse)
+# library(dplyr)
+# 
+# #read in csv file
+# file <- "C:/Users/esilve02/RProjects/gRes/outputData/gresOutputBasicPublic/notUsableCsvFiles/actonOutput1.csv"
+# read.csv <- read_csv(file, na = "", skip = 0)
+# 
+# #delete rows 2 and 3 in csv file
+# read.csv <- read.csv[-c(2, 3), ]
+# 
+# #read in the same csv file, but skipping the first 4 rows
+# read.csv2 <- read_csv(file, na = "", skip = 4)
+# 
+# # read.csv2 <- read_csv(file, na = "", skip = 0)
+# # read.csv2 <- read.csv3[-c(1,2), ]
+# 
+# #add in NA columns so that the two versions of the csv line up (headings to values)
+# xx = c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
+#        "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+#        "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK",
+#        "AL", "AM", "AN", "AO", "AP", "AQ", "AR")
+# read.csv2[xx] <- NA
+# read.csv2 <- read.csv2 %>% select ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
+#                       "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+#                       "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK",
+#                       "AL", "AM", "AN", "AO", "AP", "AQ", "AR", everything())
+# 
+# #rename column names in csv2 so that they are the same as csv
+# colnames(read.csv2) <- colnames(read.csv)
+# 
+# #rbind the two files together into csv3
+# read.csv3 <- rbind(read.csv, read.csv2)
 
-#read in csv file
-file <- "C:/Users/esilve02/RProjects/gRes/outputData/gresOutputBasicPublic/notUsableCsvFiles/actonOutput1.csv"
-read.csv <- read_csv(file, na = "", skip = 0)
+######READ IN MANUALLY CREATED G-RES OUTPUT EXCEL FILE#############
+#this excel file contains the output information from the G-res .html output files
+#it contains the same headings/output information as Jake's dataForGres excel file
+#the path for Jake's dataForGres excel file is:
+#"C:\Users\esilve02\RProjects\gRes\inputData\dataSources\dataForGres.xlsx"
+#the path to the output excel file is:
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublic\outputDataFromGres.xlsx"
+#the following code reads in both files
 
-#delete rows 2 and 3 in csv file
-read.csv <- read.csv[-c(2, 3), ]
+library(readxl)
 
-#read in the same csv file, but skipping the first 4 rows
-read.csv2 <- read_csv(file, na = "", skip = 4)
+#read in dataForGres excel file
+dataFile <- read_excel("C:/Users/esilve02/RProjects/gRes/inputData/dataSources/dataForGres.xlsx")
 
-# read.csv2 <- read_csv(file, na = "", skip = 0)
-# read.csv2 <- read.csv3[-c(1,2), ]
-
-#add in NA columns so that the two versions of the csv line up (headings to values)
-xx = c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
-       "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
-       "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK",
-       "AL", "AM", "AN", "AO", "AP", "AQ", "AR")
-read.csv2[xx] <- NA
-read.csv2 <- read.csv2 %>% select ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
-                      "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
-                      "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK",
-                      "AL", "AM", "AN", "AO", "AP", "AQ", "AR", everything())
-
-#rename column names in csv2 so that they are the same as csv
-colnames(read.csv2) <- colnames(read.csv)
-
-#rbind the two files together into csv3
-read.csv3 <- rbind(read.csv, read.csv2)
+#read in outputDataFromGres
+outputFile <- read_excel("C:/Users/esilve02/RProjects/gRes/outputData/gresOutputBasicPublic/outputDataFromGres.xlsx")
 
 
 ####ATTEMPT AT READING IN A PDF#########

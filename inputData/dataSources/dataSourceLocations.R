@@ -3,6 +3,29 @@
 
 ##########VARIABLE NOTES################
 
+#######Diffusive Emissions#########
+#The necessary variables for G-res to calculate diffusive emissions are:
+#Age of the reservoir (assumed to be 100, it appears to be not based on year of impoundment)
+#Mean annual temperature
+#Littoral Area
+
+#######Ebullition###########
+#The necessary variables fo G-res to calculate ebullition are:
+#Cumulative global horizontal radiance
+#Littoral area
+
+##########Degassing#################
+#Note: we do not want G-res to calculate this
+#The necessary variables for G-res to calculate degassing are:
+#WRT, thermocline, and post impoundment annual CH4 diffusive emission model (integrated over 100 years)
+
+########Gross Annual CO2 Emissions###########
+#Age of reservoir (assumed to be 100 years, again it appears to not be based on year of impoundment)
+#Mean annual temperature
+#Phosphorous concentration
+#Reservoir Area
+#Reservoir surface soil carbon content
+
 #####Year of Impoundment/Age of Reservoir#######
   # I think that when G-res said that age of reservoir was important for 
   #diffusive emissions, it didn't mean year of impoundment. 
@@ -530,7 +553,7 @@
 #to save G-res outputs as a csv, click on the "export to txt" button in the 
   #top right hand corner of G-res, and save the file name as a .csv
 #to save G-res outputs as .html, click on the printable report button on
-  #the top right corner and then click on output report, then command save once it loads
+  #the top right corner and then click on GHG results report, then command save once it loads
 #the information in these files includes output methane emission data
 
 #path to Acton Lake level 1 output file:
@@ -652,23 +675,25 @@
 ########LEVEL 2 G-RES OUTPUT .CSV FILES############
 #the following comments are paths to output that are the result of level 2
   #G-res .mer input files
-#They are all in .csv format
+#They are all in .html format
 #The lakes that do not have paths are the same lakes that did not have land use data avaialble
+#The outputs do not have different values than the corresponding output from 
+  #level 1 data- land use does not seem to affect methane emission outputs
 
 #path to Acton Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\actonOutput2.html"
 
 #path to Allatoona Lake level 2 output file:
 #
 
 #path to Alum Creek lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\alumCreekOutput2.html"
 
 #path to Apple Valley Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\appleValleyOutput2.html"
 
 #path to Atwood lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\atwoodOutput2.html"
 
 #path to Brookville Lake level 2 output file:
 #
@@ -677,10 +702,10 @@
 #
 
 #path to Burr Oak Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\burrOakOutput2.html"
 
 #path to Caesar Creek Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\caesarCreekOutput2.html"
 
 #path to Carr Fork Lake level 2 output file:
 #
@@ -689,16 +714,16 @@
 #
 
 #path to Charles Mill Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\charlesMillOutput2.html"
 
 #path to Cowan Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\cowanOutput2.html"
 
 #path to Delaware Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\delawareOutput2.html"
 
 #path to Dillon Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\dillonOutput2.html"
 
 #path to Douglas Lake level 2 output file:
 #
@@ -713,61 +738,61 @@
 #
 
 #path to Hocking County Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\hockingCountyOutput2.html"
 
 #path to Kiser Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\kiserOutput2.html"
 
 #path to Knox Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\knoxOutput2.html"
 
 #path to La Due Reservoir level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\laDueResOutput2.html"
 
 #path to Lake Loramie level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\lakeLoramieOutput2.html"
 
 #path to Lake Milton level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\lakeMiltonOutput2.html"
 
 #path to Lake Mohawk level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\lakeMohawkOutput2.html"
 
 #path to Lake Roaming Rock level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\lakeRoamingRockOutput2.html"
 
 #path to Lake Waynoka level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\lakeWaynokaOutput2.html"
 
 #path to Michael J. Kirwan Reservoir level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\michaelJKirwanOutput2.html"
 
 #path to Paint Creek Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\paintCreekOutput2.html"
 
 #path to Piedmont Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\piedmontOutput2.html"
 
 #path to Pleasant Hill Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\pleasantHillOutput2.html"
 
 #path to Rocky Fork Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\rockyForkOutput2.html"
 
 #path to Senecaville Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\senecavilleOutput2.html"
 
 #path to Tappan Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\tappanOutput2.html"
 
 #path to Watts Bar Lake level 2 output file:
 #
 
 #path to William H. Harsha Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\williamHarshaOutput2.html"
 
 #path to Wingfoot Lake level 2 output file:
-#
+#"C:\Users\esilve02\RProjects\gRes\outputData\gresOutputBasicPublicLanduse\htmlFiles\wingfootOutput2.html"
 
 #########END OF LEVEL 2 OUTPUT .csv FILES############
 

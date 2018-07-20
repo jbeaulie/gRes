@@ -3,8 +3,14 @@
 #This method is different than the one G-res uses- G-res uses a temperature
   #correction coefficient to annualize the data
 
+#This code also merges dataForGres and outputDataFromGres, applies the 
+  #annualization factor to the measurements in dataForGres and plots the 
+  #observed vs G-res predicted values
+
 library(base)
 library(readxl)
+library(tidyverse)
+library(ggplot2)
 
 #read in excel file with Sarah's Acton measurements
 flux <- read_excel("C:/Users/esilve02/RProjects/gRes/inputData/actonMonthlyCH4.xlsx")
@@ -31,3 +37,114 @@ summerFluxAvg <- summerFluxSum / 4
 
 annualFactor <- summerFluxAvg/fluxSum
 
+###read in dataForGres, which has observed emission values
+obsEmissions <- read_excel("C:/Users/esilve02/RProjects/gRes/inputData/dataSources/dataForGres.xlsx")
+
+#annualize total emissions by multiplying observed values by annualization factor
+obsEmissions$ch4.trate.mg.h_Estimate_Annual <- obsEmissions$ch4.trate.mg.h_Estimate*annualFactor
+
+#annualize diffusive emissions by multiplying observed values by annualization factor
+obsEmissions$ch4.drate.mg.m2.h_Estimate_Annual <- obsEmissions$ch4.drate.mg.m2.h_Estimate*annualFactor
+
+#annualize ebullition emissions by multiplying observed values by annualization factor
+obsEmissions$ch4.erate.mg.h_Estimate_Annual <- obsEmissions$ch4.erate.mg.h_Estimate*annualFactor
+
+#read in excel with G-res predicted values
+predEmissions <- read_excel("C:/Users/esilve02/RProjects/gRes/outputData/gresOutputBasicPublic/outputDataFromGres.xlsx")
+
+#merge observed and G-res calculated excel files
+combineEmissions <- merge(obsEmissions, predEmissions, by.obsEmissions = Lake_Name, by.predEmissions = Lake_Name)
+
+#graph observed vs. G-res calculated values
+#This code is Jakes from reservoirGhgEmissions.R, but edited to fit the new variables
+
+#With 1:1 line
+ggplot(combineEmissions, aes(ch4.trate.mg.h_Estimate_Annual, t.ch4.mgCH4.m2.hr.gres)) + 
+  geom_point(aes(color = Survey)) +
+  geom_abline(slope = 1, intercept = 0) +
+  ylab(expression(Predicted~methane~emission~rate~(mg~CH[4]~m^{-2}~hr^{-1}))) +
+  xlab(expression(Measured~methane~emission~rate~(mg~CH[4]~m^{-2}~hr^{-1}))) +
+  theme_bw() +
+  theme(panel.grid.major = element_blank(),  # Eliminate major gridlines
+        panel.grid.minor = element_blank(),  # Eliminate minor gridlines
+        panel.border = element_rect(color = "black"),
+        axis.ticks = element_line(color = "black"),
+        axis.text = element_text(color = "black"),
+        axis.title = element_text(size = 12))
+
+ggsave('gres1_1.tiff',  # export as .tif
+       units="in",  # specify units for dimensions
+       width=7,   # 1 column
+       height=5, # Whatever works
+       dpi=1200,   # ES&T. 300-600 at PLOS One,
+       compression = "lzw")
+
+# With 1:1, and 10:1 line
+ggplot(combineEmissions, aes(ch4.trate.mg.h_Estimate_Annual, t.ch4.mgCH4.m2.hr.gres)) + 
+  geom_point(aes(color = Survey)) +
+  geom_abline(slope = 10, intercept = 0, linetype = 2) +
+  geom_abline(slope = 1, intercept = 0) +
+  ylab(expression(Predicted~methane~emission~rate~(mg~CH[4]~m^{-2}~hr^{-1}))) +
+  xlab(expression(Measured~methane~emission~rate~(mg~CH[4]~m^{-2}~hr^{-1}))) +
+  theme_bw() +
+  theme(panel.grid.major = element_blank(),  # Eliminate major gridlines
+        panel.grid.minor = element_blank(),  # Eliminate minor gridlines
+        panel.border = element_rect(color = "black"),
+        axis.ticks = element_line(color = "black"),
+        axis.text = element_text(color = "black"),
+        axis.title = element_text(size = 12))
+
+ggsave('gres10_1.tiff',  # export as .tif
+       units="in",  # specify units for dimensions
+       width=7,   # 1 column
+       height=5, # Whatever works
+       dpi=1200,   # ES&T. 300-600 at PLOS One,
+       compression = "lzw")
+
+# With 1:1, 10:1, and 0.1:1 lines
+ggplot(combineEmissions, aes(ch4.trate.mg.h_Estimate_Annual, t.ch4.mgCH4.m2.hr.gres)) + 
+  geom_point(aes(color = Survey)) +
+  geom_abline(slope = 10, intercept = 0, linetype = 2) +
+  geom_abline(slope = 1, intercept = 0) +
+  geom_abline(slope = 0.1, intercept = 0, linetype = 2) +
+  ylab(expression(Predicted~methane~emission~rate~(mg~CH[4]~m^{-2}~hr^{-1}))) +
+  xlab(expression(Measured~methane~emission~rate~(mg~CH[4]~m^{-2}~hr^{-1}))) +
+  theme_bw() +
+  theme(panel.grid.major = element_blank(),  # Eliminate major gridlines
+        panel.grid.minor = element_blank(),  # Eliminate minor gridlines
+        panel.border = element_rect(color = "black"),
+        axis.ticks = element_line(color = "black"),
+        axis.text = element_text(color = "black"),
+        axis.title = element_text(size = 12))
+
+ggsave('gres1_0.1.tiff',  # export as .tif
+       units="in",  # specify units for dimensions
+       width=7,   # 1 column
+       height=5, # Whatever works
+       dpi=1200,   # ES&T. 300-600 at PLOS One,
+       compression = "lzw")
+
+# READ IN CO2 EQUIV EMISSION RATES FROM DEEMER ET AL.
+# SEE PAGE 4
+co2Equiv <- read_excel("C:/Users/esilve02/RProjects/gRes/inputData/deemerReservoirGwp.xlsx")
+
+#PLOT
+ggplot(co2Equiv, aes(gas, mg.co2.eq.m2.d)) +
+  geom_col() +
+  ylab(expression(GHG~emission~rate~(mg~CO[2]~equivalent~m^{-2}~d^{-1}))) +
+  scale_x_discrete(labels = c(expression(CH[4]), expression(CO[2]), expression(N[2]*O))) +
+  theme_bw() +
+  theme(panel.grid.major = element_blank(),  # Eliminate major gridlines
+        panel.grid.minor = element_blank(),  # Eliminate minor gridlines
+        panel.border = element_rect(color = "black"),
+        axis.ticks = element_line(color = "black"),
+        axis.text = element_text(color = "black", size = 12),
+        axis.title = element_text(size = 14),
+        axis.title.x = element_blank())
+
+ggsave('reservoirEmissionsCo2equiv.tiff',  # export as .tif
+       units="in",  # specify units for dimensions
+       width=7,   # 1 column
+       height=5, # Whatever works
+       dpi=1200,   # ES&T. 300-600 at PLOS One,
+       compression = "lzw")

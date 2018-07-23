@@ -11,6 +11,7 @@ library(base)
 library(readxl)
 library(tidyverse)
 library(ggplot2)
+library(utils)
 
 #read in excel file with Sarah's Acton measurements
 flux <- read_excel("C:/Users/esilve02/RProjects/gRes/inputData/actonMonthlyCH4.xlsx")
@@ -38,7 +39,26 @@ summerFluxAvg <- summerFluxSum / 4
 annualFactor <- summerFluxAvg/fluxSum
 
 ###read in dataForGres, which has observed emission values
-obsEmissions <- read_excel("C:/Users/esilve02/RProjects/gRes/inputData/dataSources/dataForGres.xlsx")
+#dataForGres <- read_excel("C:/Users/esilve02/RProjects/gRes/inputData/dataSources/dataForGres.xlsx")
+
+obsEmissions <- read.table("C:/Users/esilve02/RProjects/gRes/inputData/dataSources/dataForGres.txt", sep = " ")
+phos <- data.frame(obsEmissions$Lake_Name, obsEmissions$tp_Estimate)
+#reorder the columns and delete some
+#NOTE: dataForGres excel file includes reservoir volume, but obsEmissions does not
+  #if you need reservoir volume, uncomment the line above that reads in dataForGres
+obsEmissions <- obsEmissions[, c(29, 28, 24, 30, 18, 19, 2:7, 16)]
+
+#add extra Harsha data from 2016 and 2017 papers to the obsEmissions df
+extra <- data.frame("William H Harsha Lake 2017",	"USEPA",	8.31944396,
+                    34.45121951,	11.629,	0.1552, 34.3,
+                    2,	32.3, NA, NA, NA, NA)
+colnames(extra) <- colnames(obsEmissions)
+extra2 <- data.frame("William H Harsha Lake 2016",	"USEPA",	8.31944396,
+                     34.45121951,	11.629,	0.1552, 8.3,
+                     0.6,	7.7, NA, NA, NA, NA)
+colnames(extra2) <- colnames(obsEmissions)
+extraAll <- rbind(extra, extra2)
+obsEmissions <- rbind(obsEmissions, extraAll)
 
 #annualize total emissions by multiplying observed values by annualization factor
 obsEmissions$ch4.trate.mg.h_Estimate_Annual <- obsEmissions$ch4.trate.mg.h_Estimate*annualFactor
@@ -148,3 +168,5 @@ ggsave('reservoirEmissionsCo2equiv.tiff',  # export as .tif
        height=5, # Whatever works
        dpi=1200,   # ES&T. 300-600 at PLOS One,
        compression = "lzw")
+
+

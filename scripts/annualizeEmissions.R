@@ -39,10 +39,23 @@ summerFluxAvg <- summerFluxSum / 4
 annualFactor <- summerFluxAvg/fluxSum
 
 ###read in dataForGres, which has observed emission values
-#dataForGres <- read_excel("C:/Users/esilve02/RProjects/gRes/inputData/dataSources/dataForGres.xlsx")
+dataForGres <- read_excel("C:/Users/esilve02/RProjects/gRes/inputData/dataSources/dataForGres.xlsx")
 
-obsEmissions <- read.table("C:/Users/esilve02/RProjects/gRes/inputData/dataSources/dataForGres.txt", sep = " ")
+obsEmissions <- read.table("C:/Users/esilve02/RProjects/gRes/inputData/dataSources/dataForGres2.txt", sep = " ")
+
+
+#just phosphorus data
 phos <- data.frame(obsEmissions$Lake_Name, obsEmissions$tp_Estimate)
+#just reservoir volume and area data
+volArea <- data.frame(obsEmissions$Lake_Name, obsEmissions$reservoir.volume.m3, obsEmissions$reservoir.area.m2)
+#just landuse data
+landuse <- data.frame(obsEmissions$Lake_Name, obsEmissions$watershed.area.m2, 
+                      obsEmissions$percent.agg.ag, obsEmissions$percent.barren,
+                      obsEmissions$percent.openwater, obsEmissions$percent.urban,
+                      obsEmissions$percent.forest, obsEmissions$percent.wetlands,
+                      obsEmissions$percent.shrub.scrub+obsEmissions$percent.grassland.herbaceous)
+
+
 #reorder the columns and delete some
 #NOTE: dataForGres excel file includes reservoir volume, but obsEmissions does not
   #if you need reservoir volume, uncomment the line above that reads in dataForGres

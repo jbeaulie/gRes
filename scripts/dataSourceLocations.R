@@ -25,6 +25,31 @@
 #Phosphorous concentration
 #Reservoir Area
 #Reservoir surface soil carbon content
+######The above variables are what is documented in the G-res technical document
+#After a lot of sleuthing, we figured out that in order to calculate CO2
+  #emissions, G-res also needs: "River Area before Impoundment (%)",
+  #which is under the "Preimpoundment Land Cover in the Reservoir Area"
+  #section at the bottom of the catchment tab. This variable is important
+  #because G-res discounts CO2 emissions from natural emissions (pre impoundment)
+  #according to the "CO2 Diffusive Emissions Integrated on Lifetime" equation
+  #on the top of page 38 in the G-res Technical documentation.
+  #if the river area is not known, it can be estimated using the equation 
+  #on page 46 of  the technical document if you have the river length before impoundment.
+#We did a full run in G-res of Acton Lake, with all the variables needed
+  #to produce CH4 and CO2 emissions. The soil C data came from Earth Engine
+  #and the Acton Lake Pre Impoundment River Length came from Jake doing a
+  #calculation in GIS and messaging me the value. The value is 3810m.
+  #Note: Earth Engine has you put in meters above sea level, and we did not 
+  #have this data for Acton in dataForGres, so I did a quick google and got
+  #262m and used that value.
+#Using GIS, we estimated the river length either by being able to see
+  #a deeper mark that the river made on the map, or by drawing a line through\
+  #the middle of the lake and estimating that as the length.
+# there is a weird glitch in G-res, where if you put in the river length 
+  #it will calculate river area and fill in the square with the value, 
+  #but it won't calculate CO2 if you don't delete what it automatically 
+  #filled in and type it yourself
+#As of 7/26/18, Acton is the only lake with river length data (and therefore a CO2 output)
 
 #####Year of Impoundment/Age of Reservoir#######
   # I think that when G-res said that age of reservoir was important for 

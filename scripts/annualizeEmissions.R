@@ -53,22 +53,19 @@ obsEmissions <- read.table("inputData/dataSources/dataForGres.txt", sep = " ")
 #                       obsEmissions$percent.shrub.scrub+obsEmissions$percent.grassland.herbaceous)
 
 
-#reorder the columns and delete some
-#NOTE: dataForGres excel file includes reservoir volume, but obsEmissions does not
-#if you need reservoir volume, uncomment the line above that reads in dataForGres
-obsEmissions <- obsEmissions[, c(29, 28, 24, 30, 18, 19, 2:7, 16)]
 
 #add extra Harsha data from 2016 and 2017 papers to the obsEmissions df
-extra <- data.frame("William H Harsha Lake 2017",	"USEPA",	8.31944396,
-                    34.45121951,	11.629,	0.1552, 34.3,
-                    2,	32.3, NA, NA, NA, NA)
-colnames(extra) <- colnames(obsEmissions)
-extra2 <- data.frame("William H Harsha Lake 2016",	"USEPA",	8.31944396,
-                     34.45121951,	11.629,	0.1552, 8.3,
-                     0.6,	7.7, NA, NA, NA, NA)
-colnames(extra2) <- colnames(obsEmissions)
-extraAll <- rbind(extra, extra2)
-obsEmissions <- rbind(obsEmissions, extraAll)
+#doesn't work with new dataForGres
+# extra <- data.frame("William H Harsha Lake 2017",	"USEPA",	8.31944396,
+#                     34.45121951,	11.629,	0.1552, 34.3,
+#                     2,	32.3, NA, NA, NA, NA)
+# colnames(extra) <- colnames(obsEmissions)
+# extra2 <- data.frame("William H Harsha Lake 2016",	"USEPA",	8.31944396,
+#                      34.45121951,	11.629,	0.1552, 8.3,
+#                      0.6,	7.7, NA, NA, NA, NA)
+# colnames(extra2) <- colnames(obsEmissions)
+# extraAll <- rbind(extra, extra2)
+# obsEmissions <- rbind(obsEmissions, extraAll)
 
 #annualize total emissions by multiplying observed values by annualization factor
 obsEmissions$ch4.trate.mg.h_Estimate_Annual <- obsEmissions$ch4.trate.mg.h_Estimate*annualFactor
@@ -102,7 +99,8 @@ ggplot(combineEmissions, aes(ch4.trate.mg.h_Estimate_Annual, t.ch4.mgCH4.m2.hr.g
         panel.border = element_rect(color = "black"),
         axis.ticks = element_line(color = "black"),
         axis.text = element_text(color = "black"),
-        axis.title = element_text(size = 12))
+        axis.title = element_text(size = 12)) 
+  #geom_errorbar(aes (ymin = combineEmissions$ch4.trate.mg.h_Estimate_Annual - combineEmissions$ch4.trate.mg.h_LCB95Pct, ymax = combineEmissions$ch4.trate.mg.h_Estimate_Annual + combineEmissions$ch4.trate.mg.h_UCB95Pct))
 
 ggsave('gres1_1.tiff',  # export as .tif
        units="in",  # specify units for dimensions

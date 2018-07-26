@@ -120,6 +120,9 @@
 #path to Charles Mill Lake temperature data file (PDF):
 #"\inputData\dataSources\airTemperature\charlesMillTempDataNOAA.pdf"
 
+#path to Cle Elum Lake temperature data file (PDF):
+#"\inputData\dataSources\airTemperature\cleElumTempDataNOAA.pdf"
+
 #path to Cowan Lake temperature data file (PDF):
 #"\inputData\dataSources\airTemperature\cowanTempDataNOAA.pdf"
 
@@ -135,6 +138,9 @@
 #path to Fontana Lake temperature data file (PDF):
 #"\inputData\dataSources\airTemperature\fontanaTempDataNOAA.pdf"
 
+#path to Foster Lake temperature data file (PDF):
+#"\inputData\dataSources\airTemperature\fosterTempDataNOAA.pdf"
+
 #path to Guntersville Lake temperature data file (PDF):
 #"\inputData\dataSources\airTemperature\guntersvilleTempDataNOAA.pdf"
 
@@ -144,11 +150,20 @@
 #path to Hocking County Lake temperature data file (PDF):
 #"\inputData\dataSources\airTemperature\hockingCountyTempDataNOAA.pdf"
 
+#path to J.C. Boyle Lake temperature data file (PDF):
+#"\inputData\dataSources\airTemperature\jcBoyleTempDataNOAA.pdf"
+
+#path to Kachess Lake temperature data file (PDF):
+#"\inputData\dataSources\airTemperature\kachessTempDataNOAA.pdf"
+
 #path to Kiser Lake temperature data file (PDF):
 #"\inputData\dataSources\airTemperature\kiserTempDataNOAA.pdf"
 
 #path to Knox Lake temperature data file (PDF):
 #"\inputData\dataSources\airTemperature\knoxTempDataNOAA.pdf"
+
+#path to Lacamas Lake temperature data file (PDF):
+#"\inputData\dataSources\airTemperature\lacamasTempDataNOAA.pdf"
 
 #path to La Due Reservoir temperature data file (PDF):
 #"\inputData\dataSources\airTemperature\laDueResTempDataNOAA.pdf"
@@ -340,6 +355,9 @@
 #path to Charles Mill Lake G-res .mer file:
 #"\inputData\gresInputDataBasicPublic\G-resTool_Charles Mill Lake (1).mer"
 
+#path to Cle Elum Lake G-res .mer file:
+#"\inputData\gresInputDataBasicPublic\G-resTool_Cle Elum (1).mer"
+
 #path to Cowan Lake G-res .mer file:
 #"\inputData\gresInputDataBasicPublic\G-resTool_Cowan Lake (1).mer"
 
@@ -355,6 +373,9 @@
 #path to Fontana Lake G-res .mer file:
 #"\inputData\gresInputDataBasicPublic\G-resTool_Fontana (1).mer"
 
+#path to Foster Lake G-res .mer file:
+#"\inputData\gresInputDataBasicPublic\G-resTool_Foster (1).mer"
+
 #path to Guntersville Lake G-res .mer file:
 #"\inputData\gresInputDataBasicPublic\G-resTool_Guntersville (1).mer"
 
@@ -364,6 +385,12 @@
 #path to Hocking County Lake G-res .mer file:
 #"\inputData\gresInputDataBasicPublic\G-resTool_Hocking County Lake (1).mer"
 
+#path to J.C. Boyle Lake G-res .mer file:
+#"\inputData\gresInputDataBasicPublic\G-resTool_JC Boyle (1).mer"
+
+#path to Kachess Lake G-res .mer file:
+#"\inputData\gresInputDataBasicPublic\G-resTool_Kachess (1).mer"
+
 #path to Kiser Lake G-res .mer file:
 #"\inputData\gresInputDataBasicPublic\G-resTool_Kiser Lake (1).mer"
 
@@ -372,6 +399,9 @@
 
 #path to La Due Reservoir G-res .mer file:
 #"\inputData\gresInputDataBasicPublic\G-resTool_La Due Reservoir (1).mer"
+
+#path to Lacamas Lake G-res .mer file:
+#"\inputData\gresInputDataBasicPublic\G-resTool_Lacamas (1).mer"
 
 #path to Lake Loramie G-res .mer file:
 #"\inputData\gresInputDataBasicPublic\G-resTool_Lake Loramie (1).mer"
@@ -434,7 +464,7 @@
 #"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Acton Lake (2).mer"
 
 #path to Allatoona Lake G-res .mer file:
-#
+#"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Allatoona (2).mer"
 
 #path to Alum Creek Lake G-res .mer file:
 #"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Alum Creek Lake (2).mer"
@@ -446,10 +476,10 @@
 #"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Atwood Lake (2).mer"
 
 #path to Brookville lake G-res .mer file:
-#
+#"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Brookville Lake (2).mer"
 
 #path to Buckhorn Lake G-res .mer file:
-#
+#"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Buckhorn Lake (2).mer"
 
 #path to Burr Oak Lake G-res .mer file:
 #"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Burr Oak Reservoir (2).mer"
@@ -458,10 +488,10 @@
 #"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Caesar Creek Lake (2).mer"
 
 #path to Carr Fork Lake G-res .mer file:
-#
+#"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Carr Fork Lake (2).mer"
 
 #path to Cave Run Lake G-res .mer file:
-#
+#"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Cave Run Lake (2).mer"
 
 #path to Charles Mill Lake G-res .mer file:
 #"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Charles Mill Lake (2).mer"
@@ -476,16 +506,16 @@
 #"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Dillon Lake (2).mer"
 
 #path to Douglas Lake G-res .mer file:
-#
+#"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Douglas (2).mer"
 
 #path to Fontana Lake G-res .mer file:
-#
+#"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Fontana (2).mer"
 
 #path to Guntersville Lake G-res .mer file:
-#
+#"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Guntersville (2).mer"
 
 #path to Hartwell Lake G-res .mer file:
-#
+#"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Hartwell (2).mer"
 
 #path to Hocking County Lake G-res .mer file:
 #"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Hocking County Lake (2).mer"
@@ -536,7 +566,7 @@
 #"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Tappan Lake (2).mer"
 
 #path to Watts Bar Lake G-res .mer file:
-#
+#"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Watts Bar (1).mer"
 
 #path to William H. Harsha Lake G-res .mer file:
 #"\inputData\gresInputDataBasicPublicLanduse\G-resTool_William H Harsha Lake (2).mer"
@@ -545,6 +575,113 @@
 #"\inputData\gresInputDataBasicPublicLanduse\G-resTool_Wingfoot Lake (2).mer"
 
 ############END OF LEVEL 2 INPUT FILES############
+
+
+###########G-RES LEVEL 3 CHEM DATA INPUT FILES######################
+#These files contain phosphorus concentration data (from dataForGres.txt)
+#this level is meant to provide the variables needed to calculate CO2 emission values
+#using Earth Enging, Soil C can also be calculated
+#This didn't seem to work, and no CO2 emission values were calculated
+  #We are unsure as to why they were not calculated
+#harrison and bevelhimer lakes are not included because we did not have phosphorus data for them
+
+#path to Acton Lake G-res .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Acton Lake (3).mer"
+
+#path to Alum Creek Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Alum Creek Lake (3).mer"
+
+#path to Apple Valley Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Apple Valley Lake (3).mer"
+
+#path to Atwood Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Atwood Lake (3).mer"
+
+#path to Brookville Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Brookville Lake (3).mer"
+
+#path to Buckhorn Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Buckhorn Lake (3).mer"
+
+#path to Burr Oak Reservoir .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Burr Oak Reservoir (3).mer"
+
+#path to Caesar Creek Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Caesar Creek Lake (3).mer"
+
+#path to Carr Fork lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Carr Fork Lake (3).mer"
+
+#path to Cave Run Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Cave Run Lake (3).mer"
+
+#path to Charles Mill Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Charles Mill Lake (3).mer"
+
+#path to Cowan Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Cowan Lake (3).mer"
+
+#path to Delaware Reservoir .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Delaware Reservoir (3).mer"
+
+#path to Dillon Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Dillon Lake (3).mer"
+
+#path to hocking County Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Hocking County Lake (3).mer"
+
+#path to Kiser Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Kiser Lake (3).mer"
+
+#path to knox Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Knox Lake (3).mer"
+
+#path to La Due Reservoir .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_La Due Reservoir (3).mer"
+
+#path to Lake Loramie .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Lake Loramie (3).mer"
+
+#path to lake milton .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Lake Milton (3).mer"
+
+#path to Lake Mohawk .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Lake Mohawk (3).mer"
+
+#path to lake Roaming Rock .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Lake Roaming Rock (3).mer"
+
+#path to Lake Waynoka .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Lake Waynoka (3).mer"
+
+#path to Michael j. Kirwan Reservoir .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Michael J Kirwan Reservoir (3).mer"
+
+#path to Paint Creek Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Paint Creek Lake (3).mer"
+
+#path to Piedmont Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Piedmont Lake (3).mer"
+
+#path to Pleasant Hill Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Pleasant Hill Lake (3).mer"
+
+#path to Rocky Fork Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Rocky Fork Lake (3).mer"
+
+#path to Senecaville Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Senecaville Lake (3).mer"
+
+#path  to Tappan Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Tappan Lake (3).mer"
+
+#path to William H. Harsha Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_William H Harsha Lake (3).mer"
+
+#path to Wingfoot Lake .mer file:
+#\inputData\gresInputDataBasicPublicLanduseChem\G-resTool_Wingfoot Lake (3).mer"
+
+
 
 ##############LEVEL 1 G-RES OUPUT .HTML FILES############
 #the paths below lead to the saved outputs that resulted from the level 1
@@ -592,6 +729,9 @@
 #path to Charles Mill Lake level 1 output file:
 #"\outputData\gresOutputBasicPublic\htmlFiles\charlesMillOutput1.html"
 
+#path to Cle Elum Lake level 1 output file:
+#"\outputData\gresOutputBasicPublic\htmlFiles\cleElumOutput1.html"
+
 #path to Cowan Lake level 1 output file:
 #"\outputData\gresOutputBasicPublic\htmlFiles\cowanOutput1.html"
 
@@ -607,6 +747,9 @@
 #path to Fontana Lake level 1 output file:
 #"\outputData\gresOutputBasicPublic\htmlFiles\fontanaOutput1.html"
 
+#path to Foster lake level 1 output file:
+#"\outputData\gresOutputBasicPublic\htmlFiles\fosterOutput1.html"
+
 #path to Guntersville Lake level 1 output file:
 #"\outputData\gresOutputBasicPublic\htmlFiles\guntersvilleOutput1.html"
 
@@ -616,11 +759,20 @@
 #path to Hocking County Lake level 1 output file:
 #"\outputData\gresOutputBasicPublic\htmlFiles\hockingCountyOutput1.html"
 
+#path to J.C. Boyle Lake level 1 output file:
+#"\outputData\gresOutputBasicPublic\htmlFiles\jcBoyleOutput1.html"
+
+#path to Kachess Lake level 1 output file:
+#"\outputData\gresOutputBasicPublic\htmlFiles\kachessOutput1.html"
+
 #path to Kiser Lake level 1 output file:
 #"\outputData\gresOutputBasicPublic\htmlFiles\kiserOutput1.html"
 
 #path to Knox Lake level 1 output file:
 #"\outputData\gresOutputBasicPublic\htmlFiles\knoxOutput1.html"
+
+#path to Lacamas Lake level 1 output file:
+#"\outputData\gresOutputBasicPublic\htmlFiles\lacamasOutput1.html"
 
 #path to La Due Reservoir level 1 output file:
 #"\outputData\gresOutputBasicPublic\htmlFiles\laDueResOutput1.html"
@@ -672,7 +824,7 @@
 
 ##########END OF LEVEL 1 OUTPUT .CSV FILES#############
 
-########LEVEL 2 G-RES OUTPUT .CSV FILES############
+########LEVEL 2 G-RES OUTPUT .HTML FILES############
 #the following comments are paths to output that are the result of level 2
   #G-res .mer input files
 #They are all in .html format

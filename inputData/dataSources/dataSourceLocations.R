@@ -1012,7 +1012,8 @@
 library(readxl)
 
 #read in dataForGres excel file
-dataFile <- read_excel("C:/Users/esilve02/RProjects/gRes/inputData/dataSources/dataForGres.xlsx")
+#dataFile <- read_excel("C:/Users/esilve02/RProjects/gRes/inputData/dataSources/dataForGres.xlsx")
+obsEmissions <- read.table("C:/Users/esilve02/RProjects/gRes/inputData/dataSources/dataForGres.txt", sep = " ")
 
 #read in outputDataFromGres
 outputFile <- read_excel("C:/Users/esilve02/RProjects/gRes/outputData/gresOutputBasicPublic/outputDataFromGres.xlsx")

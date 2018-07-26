@@ -1,51 +1,48 @@
-####This code takes Sarah's monthly flux data measurements from Acton lake and
-  #calculates a factor that we will use to annualize emmission data
-#This method is different than the one G-res uses- G-res uses a temperature
-  #correction coefficient to annualize the data
+# Jake comments
+# 1. Update based on new dataForGres.txt file.
+# 2. Subset using column names, rather than position index.
+# 3. Path for output data is broken.
 
-#This code also merges dataForGres and outputDataFromGres, applies the 
-  #annualization factor to the measurements in dataForGres and plots the 
-  #observed vs G-res predicted values
+# Our objective is to compare our observed emission rate data to Gres predicted
+# values.  Gres reports an annual average flux rate (i.e. mean of the 12-monthly
+# means within one year; Section 2.2.2 and Fig 4 of Technical Document).  
+# Therefore we need to convert our measurements made during the summer to an 
+# annual average.  We will # do this using the 2017 monthly mean CH4 emission 
+# rates from Acton Lake measured with flux tower.
 
-library(base)
+# This code also merges dataForGres and outputDataFromGres, applies the 
+# annualization factor to the measurements in dataForGres and plots the 
+# observed vs G-res predicted values
+
+# LIBRARIES---------------------
+library(tidyverse) # this loads ggplot, dplyr, and others
 library(readxl)
-library(tidyverse)
-library(ggplot2)
-library(utils)
 
-#read in excel file with Sarah's Acton measurements
-flux <- read_excel("C:/Users/esilve02/RProjects/gRes/inputData/actonMonthlyCH4.xlsx")
 
-#sum all the monthly flux rates
-#this represents the total emissions over one year
-fluxSum <- sum(flux$meanCh4Flux)
+# Read in excel file with Sarah's Acton measurements
+flux <- read_excel("inputData/actonMonthlyCH4.xlsx")
 
-#take the average of the June-September fluxes
-#These are the months when the 32 reservoirs were sampled
-#This is to represent the summer season because we can't assume
-  #a specific monthly pattern will always directly apply:
-  #Sarah's data from 2018 shows a different temporal pattern than 2017, so
-  #this means that a specific pattern in 2017 data may not apply directly to 
-  #2016 when the lakeswere sampled
+# Calculate annualization factor
+# mean annual = 'annualization factor' * mean summer
+# 'annualization factor' = mean annual / mean summer
+meanAnnual <- mean(flux$meanCh4Flux) # Mean annual flux (this is what Gres reports)
 
-summerFluxSum <- sum(flux[6:9, 2])
-summerFluxAvg <- summerFluxSum / 4
+meanSummer <- flux %>% 
+  filter(RDateTime < as.Date("2017-10-01"), # before Oct. 1
+         RDateTime > as.Date("2017-05-31")) %>% # after May 31
+  select(meanCh4Flux) %>% 
+  summarize(summerMean = mean(meanCh4Flux)) %>% # mean summer months
+  as.numeric() # convert to vector
 
-#divide summerFluxAvg by fluxSum
-#this reflects the fraction of annual emissions that occur during summer: 
-  #June 1- September 1, which is when the 32 lakes were sampled
-#the resulting number is the factor we will use to annualize the emission data
+annualFactor <- meanAnnual/meanSummer # 0.41
 
-annualFactor <- summerFluxAvg/fluxSum
+# Read in dataForGres, which has observed emission values
 
-###read in dataForGres, which has observed emission values
-#dataForGres <- read_excel("C:/Users/esilve02/RProjects/gRes/inputData/dataSources/dataForGres.xlsx")
-
-obsEmissions <- read.table("C:/Users/esilve02/RProjects/gRes/inputData/dataSources/dataForGres.txt", sep = " ")
+obsEmissions <- read.table("inputData/dataSources/dataForGres.txt", sep = " ")
 phos <- data.frame(obsEmissions$Lake_Name, obsEmissions$tp_Estimate)
 #reorder the columns and delete some
 #NOTE: dataForGres excel file includes reservoir volume, but obsEmissions does not
-  #if you need reservoir volume, uncomment the line above that reads in dataForGres
+#if you need reservoir volume, uncomment the line above that reads in dataForGres
 obsEmissions <- obsEmissions[, c(29, 28, 24, 30, 18, 19, 2:7, 16)]
 
 #add extra Harsha data from 2016 and 2017 papers to the obsEmissions df
@@ -70,7 +67,8 @@ obsEmissions$ch4.drate.mg.m2.h_Estimate_Annual <- obsEmissions$ch4.drate.mg.m2.h
 obsEmissions$ch4.erate.mg.h_Estimate_Annual <- obsEmissions$ch4.erate.mg.h_Estimate*annualFactor
 
 #read in excel with G-res predicted values
-predEmissions <- read_excel("C:/Users/esilve02/RProjects/gRes/outputData/gresOutputBasicPublic/outputDataFromGres.xlsx")
+#THIS DIRECTORY PATH IS BROKEN.
+predEmissions <- read_excel("outputData/gresOutputBasicPublic/outputDataFromGres.xlsx")
 
 #merge observed and G-res calculated excel files
 combineEmissions <- merge(obsEmissions, predEmissions, by.obsEmissions = Lake_Name, by.predEmissions = Lake_Name)

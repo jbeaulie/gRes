@@ -318,6 +318,9 @@
 #this file does not have data for the 6 Bevelhimer lakes
 #this information all comes from an excel file Jake put together using GIS:
 #"L:\Priv\Cin\NRMRL\ReservoirEbullitionStudy\multiResSurvey2016\siteDataForAdam\ohio2016SampleFrameTable.xls"
+#Jake updated dataForGres, and now there is landuse data there:
+#path to dataForGres:
+#"\inputData\dataSources\dataForGres.txt"
 
 #The variables in the excel file are not intuitive, so a translation is below:
 #percent_we = percent wetland = Wetlands in G-res

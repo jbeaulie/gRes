@@ -1,0 +1,203 @@
+.fm-menu-overlay {
+    -webkit-box-shadow:  3pt 3pt 10pt rgba(0, 0, 0, 0.35);
+    -moz-box-shadow:  3pt 3pt 10pt rgba(0, 0, 0, 0.35);
+    box-shadow:  3pt 3pt 10pt rgba(0, 0, 0, 0.35);
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+.fm-menu-overlay > .popupContent {
+    font-family: Arial;
+    overflow: hidden;
+}
+
+.fm-user-info {
+    position: relative;
+    height: 62px;
+    background-color: #f3f3f3;
+}
+
+.fm-user-info > .fm-loggedin {
+    font-size: 9pt;
+    color: #999;
+    position: absolute;
+    bottom: 10px;
+    left: 17px;
+	line-height: 20px;
+	width: 170px;
+    white-space: nowrap;
+}
+
+.fm-user-info > .fm-loggedin > .fm-username {
+    font-size: 11pt;
+    font-weight: bold;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fm-user-info > .v-nativebutton {
+    font-size: 10pt;
+    color: #1197ff;
+    position: absolute;
+    bottom: 13px;
+    right: 17px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.fm-menu {
+    background: transparent url(main_menu_n@2x.png);
+    background-size: 100% auto;
+    width: 50px;
+    height: 44px;
+}
+
+.fm-menu:active {
+    background-image: url(main_menu_d@2x.png);
+}
+.fm-menu.fm-popup-visible {
+    background-image: url(main_menu_s@2x.png);
+}
+
+.fm-menu-overlay {
+    background: transparent;
+    border: 1pt solid #a0a0a0;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    width: 280px;
+}
+
+.fm-menu-overlay.fm-mobile {
+    width: 260px;
+}
+
+.fm-menu-overlay.fm-mobile {
+    border: none;
+}
+
+.fm-items {
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #f3f3f3;
+
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+
+    overflow-y: auto;
+}
+
+.fm-mobile .fm-items {
+    overflow-y: hidden;
+}
+
+.fm-mobile .fm-items > div {
+    vertical-align: top;
+    display: inline-block;
+    width: 260px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.fm-item {
+    position: relative;
+    background-color: #f3f3f3;
+    color: #000;
+    height: 40px;
+    overflow: hidden;
+    border-top: 1pt solid #e1e1e1;
+    display: table;
+}
+
+.fm-mobile .fm-item {
+	width: 260px;
+}
+
+.fm-item > .fm-item-wrapper {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.fm-item.fm-disabled {
+    color: grey;
+}
+
+
+.fm-sub-menu .fm-item:first-child {
+    border-top: none;
+}
+
+.fm-item > .fm-item-wrapper > .fm-caption {
+    position: relative;
+    left: 50px;
+    font-size: 14px;
+	width: 195px;
+    white-space: pre-wrap;
+    overflow: hidden;
+}
+
+.fm-item.layout-menuitem > .fm-item-wrapper > .fm-caption,
+.fm-item.script-menuitem > .fm-item-wrapper > .fm-caption {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.fm-item  .fm-icon {
+    position: absolute;
+    background-size: 100% auto;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 43px;
+}
+
+.fm-checked  .fm-icon {
+    left: 19px;
+    top: 15px;
+    width: 12px;
+    height: 12px;
+    background-image: url(menu_check_mark@2x.png);
+}
+
+.fm-item:hover {
+    background-color: #fafafa;
+}
+
+.fm-item.fm-disabled:hover {
+    background-color: #f3f3f3;
+}
+
+.fm-item.fm-back-item {
+    background-image: url(back@2x.png);
+    background-repeat: no-repeat;
+    background-position: 17px 9px;
+}
+
+.fm-has-sub-items {
+    background-image: url(forward@2x.png);
+    background-repeat: no-repeat;
+    background-position: right 17px top 9px;
+
+}
+
+.fm-item.fm-has-sub-items .fm-item-wrapper > .fm-caption {
+	width: 175px;
+}
+
+.fm-close-button {
+    width: 100%;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background: transparent url(menu_close_window@2x.png);
+    background-size: 100% auto;
+    border: none;
+    outline: none;
+}

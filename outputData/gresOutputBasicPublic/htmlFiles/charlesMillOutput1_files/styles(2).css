@@ -1,0 +1,283 @@
+/* Common styles */
+.fm-datefield,
+.fm-combobox {
+}
+
+/* Defaults for inner border */
+.fm-textarea > .inner_border,
+.fm-datefield > .inner_border,
+.fm-combobox > .inner_border {
+    position: relative;
+    width:100%; height:100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Defaults for content editable text box */
+.fm-textarea > .inner_border > .text,
+.fm-datefield > .inner_border > .text,
+.fm-combobox > .inner_border > .text {
+    position: relative;
+    left:0px;
+    display: inline-block; /* to make vertical align to work */
+    width:100%;
+    min-width: 100%;
+    max-height: 100%;
+    vertical-align: top;
+    overflow: hidden;
+    box-sizing: border-box;
+    outline : none;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+    cursor: auto;
+    line-height: normal;
+}
+
+.fm-textarea.show-scrollbars > .inner_border > .text,
+.fm-datefield.show-scrollbars > .inner_border > .text,
+.fm-combobox.show-scrollbars > .inner_border > .text {
+    text-overflow: clip;
+}
+
+/* hide ellipsis when editing*/
+.fm-textarea.edited > .inner_border > .text,
+.fm-datefield.edited > .inner_border > .text,
+.fm-combobox.edited > .inner_border > .text {
+    text-overflow: clip;
+}
+
+/* full height pseudo element to make vertical align of text to work */
+.fm-textarea > .inner_border:before,
+.fm-datefield > .inner_border:before,
+.fm-combobox > .inner_border:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    width: 0;
+}
+
+/* hack to prevent showing vertical scrollbar when the text is vertically aligned to bottom. Other alternative would be
+ to set font and line heights to zero in text div and add extra div around the text content where these values are
+ restored.  This is due to using pseudo inline element for allowing vertical alignment to the actual text. The pattern
+ is described here: http://css-tricks.com/centering-in-the-unknown/
+*/
+.v-ie .fm-textarea > .inner_border:before,
+.v-ie .fm-datefield > .inner_border:before,
+.v-ie .fm-combobox > .inner_border:before {
+    margin-bottom: -2px;
+}
+
+/* Texty Field */
+
+.fm-textarea > .inner_border_texty > .text {
+	position: absolute !important;
+	top: 0;
+	bottom: 0;
+}
+
+/* Combo box */
+
+/* focus outline */
+.fm-combobox > .inner_border > .text,
+.fm-datefield > .inner_border > .text {
+    right: 16px;
+}
+.fm-combobox.icon-hidden .text,
+.fm-datefield.icon-hidden .text {
+    right: 0px;
+}
+.fm-combobox.icon-hidden .icon,
+.fm-datefield.icon-hidden .icon {
+    display:none;
+}
+
+.fm-textarea.v-readonly {
+    border: none;
+}
+
+.fm-textarea > .inner_border > .text {
+    right: 0px;
+}
+
+.fm-textarea > .inner_border > .text,
+.fm-datefield > .inner_border > .text,
+.fm-combobox > .inner_border > .text {
+    word-wrap: break-word;
+}
+
+.fm-textarea.no-wrap > .inner_border > .text{
+    word-wrap: normal;
+    white-space: pre;
+}
+
+.fm-textarea.edited.no-wrap > .inner_border > .text {
+    width: auto;
+}
+
+/* Date field related styles */
+.fm-datefield > .inner_border {
+    padding-right: 16px;
+}
+
+.fm-datefield.icon-hidden > .inner_border {
+    padding-right: 0px;
+}
+
+.fm-datefield.v-readonly > .inner_border > .text {
+    border-width: 0px;
+    box-shadow: none;
+}
+
+.fm-datefield.v-readonly > .inner_border > .icon {
+    display: none;
+}
+
+.fm-datefield.no-wrap > .inner_border > .text {
+    word-wrap: normal;
+    white-space: pre;
+}
+
+/* combo box related styles */
+.fm-combobox > .inner_border {
+    padding-right: 16px;
+}
+
+.fm-combobox.v-readonly > .inner_border,
+.fm-combobox.icon-hidden > .inner_border {
+    padding-right: 0px;
+}
+
+.fm-combobox.v-readonly > .inner_border {
+    border-width: 0px;
+    box-shadow: none;
+}
+
+.fm-combobox > .inner_border > .text {
+
+}
+
+.fm-combobox-prompt > .inner_border > .text {
+
+}
+
+.fm-combobox > .inner_border > .icon {
+
+}
+
+.fm-combobox.v-readonly > .inner_border > .icon {
+    display: none;
+}
+
+.fm-combobox.no-wrap > .inner_border > .text {
+    word-wrap: normal;
+    white-space: pre;
+}
+
+.fm-combobox-suggestions {
+    background-color: white;
+}
+
+div.fm-combobox-suggestions.fm-mobile {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.fm-combobox-suggestions .prevpage,
+.fm-combobox-suggestions .prevpage-off,
+.fm-combobox-suggestions .nextpage,
+.fm-combobox-suggestions .nextpage-off {
+    text-align: center;
+    background-color: white;
+}
+.fm-combobox-suggestions .prevpage,
+.fm-combobox-suggestions .nextpage {
+    color: #888;
+}
+.fm-combobox-suggestions .prevpage:hover,
+.fm-combobox-suggestions .nextpage:hover {
+    color: black;
+    background-color: #DDD;
+}
+.fm-combobox-suggestions .nextpage-off,
+.fm-combobox-suggestions .prevpage-off {
+    color: #EEE;
+}
+.fm-combobox-suggestions .menu_option {
+	white-space: pre;
+}
+.fm-combobox-suggestions .menu_option,
+.fm-combobox-suggestions .prevpage,
+.fm-combobox-suggestions .prevpage-off,
+.fm-combobox-suggestions .nextpage,
+.fm-combobox-suggestions .nextpage-off {
+	padding: 2px 10px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.fm-combobox-suggestions .menu_option.selected {
+	background-color: lightblue;
+}
+
+.fm-combobox-suggestions .menu_option.focus,
+.fm-combobox-suggestions .menu_option:hover {
+	background-color: #3b5a7a;
+    color: white;
+}
+
+.fm-combobox-suggestions .menu_option.separator-after, .fm-combobox-suggestions .menu_option.separator-before  {
+    border-color: silver;
+    border-style: solid;
+    border-width: 0px;
+}
+
+.fm-combobox-suggestions .menu_option.separator-before {
+    border-top-width: 1px;
+}
+
+.fm-combobox-suggestions .menu_option.separator-after {
+    border-bottom-width: 1px;
+}
+
+/* place holder */
+.fm-textarea > .inner_border > .placeholder,
+.fm-datefield > .inner_border > .placeholder,
+.fm-combobox > .inner_border > .placeholder {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    color: #999;
+    display: none;
+    pointer-events: none;
+    bottom:auto;
+    z-index: 1;
+    background: transparent !important;
+}
+
+.fm-datefield-prompt > .inner_border > .placeholder,
+.fm-combobox-prompt > .inner_border > .placeholder {
+	right:18px;
+	overflow-x:hidden;
+}
+
+.fm-combobox.icon-hidden > .inner_border > .placeholder,
+.fm-datefield.icon-hidden > .inner_border > .placeholder {
+    right: 1px;
+}
+	
+.fm-textarea-prompt > .inner_border > .placeholder,
+.fm-datefield-prompt > .inner_border > .placeholder,
+.fm-combobox-prompt > .inner_border > .placeholder {
+    display: block;
+}
+
+/* ie specific styles*/
+.fm-textarea.edited > .inner_border > .text > p,
+.fm-datefield.edited > .inner_border > .text > p,
+.fm-combobox.edited > .inner_border > .text > p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}

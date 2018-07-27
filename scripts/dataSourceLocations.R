@@ -336,9 +336,14 @@
 #it appears to be used in calculating phosphorus load
 #phosphorus is used in calculating gross annual CO2 emission
 
+#######EARTH ENGINE DATA###########
+#The folder containing the data extracted from earth engine in .csv format 
+  #is located:
+#"\inputData\dataSources\earthEngineData"
 
-
-
+#######gresReadMe#############
+#A document with explanations of my process going through this is located:
+#"\inputData\gresReadMe.docx"
 
 
 ######G-RES INPUT .MER FILES#######

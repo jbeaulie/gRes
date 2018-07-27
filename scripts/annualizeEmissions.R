@@ -156,7 +156,7 @@ ggsave('gres1_0.1.tiff',  # export as .tif
 
 # READ IN CO2 EQUIV EMISSION RATES FROM DEEMER ET AL.
 # SEE PAGE 4
-co2Equiv <- read_excel("C:/Users/esilve02/RProjects/gRes/inputData/deemerReservoirGwp.xlsx")
+co2Equiv <- read_excel("inputData/deemerReservoirGwp.xlsx")
 
 #PLOT
 ggplot(co2Equiv, aes(gas, mg.co2.eq.m2.d)) +
